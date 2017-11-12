@@ -1,12 +1,12 @@
 require('dotenv').config();
 const axios = require('axios');
-const { resolve } = require('path');
+const path = require('path');
 
 // auth request handlers from: https://api.slack.com/tutorials/app-creation-and-oauth
 
 const authSlackButton = (req, res) => {
   res.status(200);
-  res.sendFile(resolve('.././client/./add_to_slack.html'));
+  res.sendFile(path.join(__dirname, '../client', 'add_to_slack.html'));
 };
 
 const authRedirect = (req, res) => {
