@@ -1,5 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const { authSlackButton, authRedirect } = require('./slackAuth_handlers');
+const receiveSlackEvents = require('./slackChannelEvents_handler');
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.get('/auth', authSlackButton);
 
 app.get('/auth/redirect', authRedirect);
 
-app.listen('3000', () => {
-  console.log('listening on 3000');
+app.post('/', receiveSlackEvents);
+
+app.listen('8080', () => {
+  console.log('listening on 8080');
 });
