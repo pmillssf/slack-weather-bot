@@ -13,11 +13,11 @@ app.get('/', (req, res) => {
   res.send('slack-weather-bot');
 });
 
-app.get('/auth', authSlackButton);
+app.get('/api/v0.1/auth', authSlackButton);
 
-app.get('/auth/redirect', authRedirect);
+app.get('/api/v0.1/auth/redirect', authRedirect);
 
-app.post('/', receiveSlackEvents);
+app.post('/api/v0.1/slackchannelevents', receiveSlackEvents);
 
 app.listen(process.env.PORT, () => {
   console.log(`listening on Port:${process.env.PORT}`);
