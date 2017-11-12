@@ -4,6 +4,7 @@
   "description": "A slack bot that reports on the weather for a given city",
   "main": "index.js",
   "scripts": {
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint server; exit 0"
   },
