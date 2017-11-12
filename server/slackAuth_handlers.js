@@ -6,7 +6,7 @@ const { resolve } = require('path');
 
 const authSlackButton = (req, res) => {
   res.status(200);
-  res.sendFile(resolve('../client/add_to_slack.html'));
+  res.sendFile(resolve('.././client/./add_to_slack.html'));
 };
 
 const authRedirect = (req, res) => {
