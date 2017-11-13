@@ -10,11 +10,7 @@ const authSlackButton = (req, res) => {
 };
 
 const authRedirect = (req, res) => {
-  axios.get(`https://slack.com/api/oauth.access?\
-    code=${req.query.code}\
-    &client_id=${process.env.CLIENT_ID}\
-    &client_secret=${process.env.CLIENT_SECRET}\
-    &redirect_uri=${process.env.REDIRECT_URI}`)
+  axios.get(`https://slack.com/api/oauth.access?code=${req.query.code}&client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&redirect_uri=${process.env.REDIRECT_URI}`)
     .then((response) => {
       console.log('response', response);
       res.status(200);

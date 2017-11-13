@@ -10,7 +10,7 @@ describe('Testing weather.js', () => {
   describe('fetchWeather', () => {
 
     beforeEach(() => {
-    mock.reset();
+      mock.reset();
     });
 
     it('Should send a Get request to https://api.openweathermap.org/data/2.5/weather', () => {
