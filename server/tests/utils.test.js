@@ -62,7 +62,38 @@ describe('Testing Utils.js', () => {
   });
 
   describe('parseSlackMessage', () => {
-    it();
+
+    it('Should resolve to help when help is requested', () => {
+      const botUserName = 'MockBot';
+      const text = "MockBot help!";
+
+      expect(parseSlackMessage(botUserName, text)).resolves.toBe('help');
+    });
+
+    it('Should resolve to city name when a city is given', () => {
+      const botUserName = 'MockBot';
+      const text = 'MockBot, what\'s the weather in San Francisco?';
+
+      expect(parseSlackMessage(botUserName, text)).resolves.toBe('SanFrancisco');
+    });
+
+    it('Should resolve to city name and country code when both are given given', () => {
+      const botUserName = 'MockBot';
+      const text = 'MockBot, what\'s the weather in San Francisco, US?';
+
+      expect(parseSlackMessage(botUserName, text)).resolves.toBe('SanFrancisco,US');
+    });
+
+    it('Should resolve to queryError when no city is given', () => {
+      const botUserName = 'MockBot';
+      const text = 'MockBot, what\'s the weather in?';
+      const textTwo = 'MockBot, what\'s up?';
+
+      expect(parseSlackMessage(botUserName, text)).resolves.toBe('queryError');
+      expect(parseSlackMessage(botUserName, textTwo)).resolves.toBe('queryError');
+
+    });
+    
   });
 
 });
