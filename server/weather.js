@@ -82,7 +82,7 @@ const formatWeather = (weatherAPIResponse) => {
     961: 'a violent storm',
     962: 'a hurricane',
   };
-  return `The current weather in ${name} is ${weatherDictionary[weather[0].id]} with a temperature of ${main.temp}° Farhrenheit.`;
+  return `The current weather in ${name} is ${weatherDictionary[weather[0].id]} with a temperature of ${main.temp}° Fahrenheit.`;
 };
 
 module.exports = {
