@@ -31,7 +31,7 @@ Here’s a sequence diagram showcasing how the bot handles a weather request:
 > ![Weather-Request-Sequence-Diagram](/diagrams/Weather-Request-Sequence-Diagram.png?raw=true "Weather-Request-Sequence-Diagram")
 
 
-###Slack User - Bot interface:
+### Slack User - Bot interface:
 
 - The weatherbot is quite simple and therefore has specific requirements for interaction. To learn about the requirements a user can enter “@weatherbotapp help” to receive instructions.
 
@@ -39,7 +39,7 @@ Here’s a sequence diagram showcasing how the bot handles a weather request:
 
 - The bot will reply with “The current weather in CITY_NAME is CURRENT_WEATHER with a temperature of TEMPERATURE° Fahrenheit.” if the request is successful or one of three error messages otherwise. 
 
-###Quirks:
+### Quirks:
 TempEventLog
 
 - The reason for the TempEventLog class and it’s instantiation for use with the “receiveSlackEvents” handler is to deal with the “graceful retries” from the Slack Events API. 
@@ -51,7 +51,7 @@ TempEventLog
 - As not receiving a 200 response within three seconds is considered a failure condition, events are re-sent fairly frequently. 
 
 
-##Scaling:
+## Scaling:
 
 - This version of the weather-app-bot was built for internal integration within a single Slack Workspace and was not designed for scaling.
 
@@ -61,7 +61,7 @@ TempEventLog
 
 - I would also add the location validation feature mentioned under future features before scaling the application.
 
-###Future Features:
+### Future Features:
 Location validation
 
 - Currently the OpenWeatherMap API validates location queries. If I were further extending this application, I would add location validation before querying the OpenWeatherMap API.
