@@ -15,7 +15,7 @@ This is a simple slack weather bot, named weather-bot-app or @weatherbotapp, tha
 ## System Architecture: 
 
 A system design diagram is below:
-> ![System-Design-Diagram](/diagrams/Weather-Bot-App-System-Design-Diagram.png?raw=true "System-Design-Diagram");
+> ![System-Design-Diagram](/diagrams/Weather-Bot-App-System-Design-Diagram.png?raw=true "System-Design-Diagram")
 
 General Overview:
 
@@ -28,7 +28,7 @@ General Overview:
 4. The resulting response is formatted and posted to the slack channel the request originated from by sending a Post request to the “chat.postMessage” endpoint of the Slack Web API. The response to a help request and any other responses from the bot are likewise posted to the same endpoint. 
 
 Here’s a sequence diagram showcasing how the bot handles a weather request:
-> ![Weather-Request-Sequence-Diagram](/diagrams/Weather-Request-Sequence-Diagram.png?raw=true "Weather-Request-Sequence-Diagram");
+> ![Weather-Request-Sequence-Diagram](/diagrams/Weather-Request-Sequence-Diagram.png?raw=true "Weather-Request-Sequence-Diagram")
 
 
 ###Slack User - Bot interface:
